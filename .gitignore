@@ -1,0 +1,104 @@
+# C/C++ build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Amiga specific build artifacts
+*.debug
+*.uaem
+*.map
+*.info
+*.icon
+*.tool
+*.device
+*.library
+*.resource
+*.font
+*.keymap
+*.datatype
+*.hunk
+*.amiga
+*.adf
+*.lha
+*.lzx
+
+# SAS/C specific
+*.lnk
+*.sym
+*.lst
+*.cod
+*.s
+*.asm
+*.i
+*.p
+*.bak
+*.tmp
+*.err
+*.wrn
+
+# Project specific
+markdownplugin
+markdownplugin.debug
+markdownplugin.map
+output.txt
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Log files
+*.log
+*.txt
+!README.txt
+!LICENSE.txt
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Tag files (if using ctags)
+tags
+tagfiles/
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Coverage reports
+*.gcov
+*.gcda
+*.gcno
+
+# Profiling data
+*.prof
+*.gprof 
