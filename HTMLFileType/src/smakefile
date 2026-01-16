@@ -1,0 +1,66 @@
+#
+# :ts=8
+#
+# HTML filetype plugin for AmigaOS 3.2 TextEdit
+#
+
+.asm.o:
+	asm $(AFLAGS) $<
+
+.c.o:
+	sc $(CFLAGS) $<
+#	@ctags >tagfiles/$* $<
+
+###############################################################################
+
+OPTIMIZE =	optimize opttime
+CPU =		any
+#DEBUG =		line
+DEBUG =	symbolflush noopt
+
+###############################################################################
+
+CFLAGS =	idlen=64 comnest streq strmerge nostkchk \
+		$(OPTIMIZE) cpu=$(CPU) debug=$(DEBUG) \
+        params=register strsect=code mccons data=far \
+		IDIR=/include IDIR=include: 
+AFLAGS =	-d
+LFLAGS =	addsym smallcode noicons batch smalldata
+
+###############################################################################
+
+OBJS = pluginheader.o highlight_html.o common.o
+LIBS = lib:scnb.lib lib:amiga.lib lib:debug.lib
+
+###############################################################################
+
+all: tagfiles HTML
+
+tagfiles:
+    makedir $@
+
+HTML: $(OBJS)
+	slink $(OBJS) to $@.debug lib $(LIBS) $(LFLAGS) \
+		map $@.map,fhx fwidth 32 pwidth 32 swidth 32
+	slink $@.debug to $@ noicons nodebug
+
+###############################################################################
+
+###############################################################################
+
+install:
+	@copy HTML //SYS/Tools/TextEditFileTypes/HTML
+
+
+clean:
+	-Delete \#?.(o|lib) \#?/\#?.(o|lib) HTML(%|.debug)
+
+realclean: clean
+	-Delete tags tagfiles \#?.map all
+
+###############################################################################
+
+mkid:
+	mkid -v \#?.(c|h)
+
+

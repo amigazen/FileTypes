@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edge Cases Test</title>
+</head>
+<body>
+    <!-- Test self-closing tags -->
+    <br>
+    <hr>
+    <img src="test.jpg" alt="Test">
+    <input type="text" name="test">
+    
+    <!-- Test tags with no attributes -->
+    <div>Content</div>
+    <span>Content</span>
+    <p>Content</p>
+    
+    <!-- Test nested tags -->
+    <div>
+        <p>
+            <span>Nested content</span>
+        </p>
+    </div>
+    
+    <!-- Test attributes with different quote styles -->
+    <div id="test1" class='test2' data-value=unquoted>
+        Content
+    </div>
+    
+    <!-- Test entity references -->
+    <p>&amp; &lt; &gt; &quot; &apos; &nbsp; &copy; &reg; &trade;</p>
+    <p>&#65; &#x41; &#160;</p>
+    
+    <!-- Test script tag -->
+    <script type="text/javascript">
+        var x = 1;
+        var y = "string";
+        function test() {
+            return x + y;
+        }
+    </script>
+    
+    <!-- Test style tag -->
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .test {
+            color: red;
+            background: blue;
+        }
+    </style>
+    
+    <!-- Test malformed tags (should still highlight) -->
+    <div class="test" >
+        Content
+    </div>
+    
+    <!-- Test empty tags -->
+    <div></div>
+    <span></span>
+    
+    <!-- Test tags with special characters in attributes -->
+    <a href="https://example.com?q=test&lang=en">Link</a>
+    <img src="image.jpg" alt="Image &amp; Text">
+</body>
+</html>
+
+
