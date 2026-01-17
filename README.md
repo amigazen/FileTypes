@@ -1,6 +1,6 @@
 # Markdown and Python FileType plugins
 
-Implements Markdown and Python syntax highlighting for texteditor.gadget compatible applicatons such as TextEdit and CodeCraft to support the Markdown and Python, from AmigaOS 3.2
+Implements Markdown and Python syntax highlighting for texteditor.gadget compatible applications such as TextEdit and CodeCraft to support the Markdown and Python, from AmigaOS 3.2
 
 N.B. Automatic recognition requires .md and .py FileType recognisers to be configured in DefIcons. With this, select the desired language from the application menu.
 

@@ -66,38 +66,72 @@ static UWORD defaultStyleCodes[10] =
 
 static CONST_STRPTR stylename[11];
 
-/* HTML tag keywords */
+/* HTML4 tag keywords */
 static CONST_STRPTR html_tags[] = {
-    "html", "head", "body", "title", "meta", "link", "script", "style",
+    /* Document structure */
+    "html", "head", "body", "title", "meta", "link", "base", "basefont",
+    "script", "style", "noscript",
+    /* Text structure */
     "div", "span", "p", "h1", "h2", "h3", "h4", "h5", "h6",
-    "a", "img", "ul", "ol", "li", "table", "tr", "td", "th",
-    "form", "input", "button", "textarea", "select", "option",
-    "br", "hr", "strong", "em", "b", "i", "u", "code", "pre",
-    "blockquote", "article", "section", "nav", "header", "footer",
-    "aside", "main", "figure", "figcaption", "video", "audio",
-    "canvas", "svg", "iframe", "embed", "object", "param",
-    "dl", "dt", "dd", "fieldset", "legend", "label",
-    "thead", "tbody", "tfoot", "colgroup", "col",
-    "noscript", "template", "slot", "details", "summary",
+    "blockquote", "pre", "address", "center",
+    /* Text formatting */
+    "strong", "em", "b", "i", "u", "s", "strike", "tt", "code", "kbd",
+    "samp", "var", "cite", "abbr", "acronym", "dfn", "del", "ins",
+    "big", "small", "sub", "sup", "font",
+    /* Lists */
+    "ul", "ol", "li", "dl", "dt", "dd", "dir", "menu",
+    /* Links and images */
+    "a", "img", "map", "area",
+    /* Tables */
+    "table", "caption", "thead", "tbody", "tfoot", "tr", "th", "td",
+    "colgroup", "col",
+    /* Forms */
+    "form", "input", "button", "textarea", "select", "option", "optgroup",
+    "label", "fieldset", "legend", "isindex",
+    /* Frames */
+    "frameset", "frame", "noframes", "iframe",
+    /* Embedded objects */
+    "object", "param", "embed", "applet",
+    /* Other */
+    "hr", "br", "wbr",
     NULL
 };
 
-/* HTML attribute keywords */
+/* HTML4 attribute keywords */
 static CONST_STRPTR html_attributes[] = {
-    "id", "class", "name", "type", "value", "href", "src", "alt",
-    "title", "width", "height", "style", "lang", "dir", "role",
-    "aria-label", "aria-labelledby", "aria-describedby",
-    "data-", "onclick", "onload", "onerror", "onchange",
-    "method", "action", "enctype", "target", "rel", "media",
-    "charset", "content", "http-equiv", "property", "itemprop",
-    "colspan", "rowspan", "scope", "headers", "abbr",
-    "accept", "accept-charset", "autocomplete", "autofocus",
-    "checked", "disabled", "form", "formaction", "formenctype",
-    "formmethod", "formnovalidate", "formtarget", "list", "max",
-    "maxlength", "min", "multiple", "pattern", "placeholder",
-    "readonly", "required", "size", "step", "tabindex",
-    "align", "valign", "border", "cellpadding", "cellspacing",
-    "controls", "autoplay", "loop", "muted", "poster", "preload",
+    /* Core attributes */
+    "id", "class", "style", "title",
+    /* Language attributes */
+    "lang", "dir",
+    /* Event handlers */
+    "onclick", "ondblclick", "onmousedown", "onmouseup", "onmouseover",
+    "onmousemove", "onmouseout", "onkeypress", "onkeydown", "onkeyup",
+    "onload", "onunload", "onfocus", "onblur", "onchange", "onsubmit",
+    "onreset", "onselect", "onerror",
+    /* Link and image attributes */
+    "href", "src", "alt", "usemap", "ismap", "shape", "coords", "target",
+    "rel", "rev", "hreflang", "type", "media",
+    /* Table attributes */
+    "colspan", "rowspan", "headers", "scope", "abbr", "axis", "align",
+    "valign", "char", "charoff", "width", "height", "border", "cellpadding",
+    "cellspacing", "frame", "rules", "summary",
+    /* Form attributes */
+    "name", "value", "type", "size", "maxlength", "checked", "disabled",
+    "readonly", "multiple", "selected", "method", "action", "enctype",
+    "accept", "accept-charset", "tabindex", "accesskey",
+    /* Object and embed attributes */
+    "codebase", "archive", "standby", "declare", "codetype", "data",
+    "code", "object", "classid", "width", "height", "hspace", "vspace",
+    /* Meta and link attributes */
+    "charset", "content", "http-equiv", "scheme", "name",
+    /* Frame attributes */
+    "frameborder", "marginwidth", "marginheight", "scrolling", "noresize",
+    "longdesc", "rows", "cols",
+    /* Font and text attributes */
+    "face", "size", "color",
+    /* Other attributes */
+    "bgcolor", "background", "text", "link", "vlink", "alink",
+    "clear", "noshade", "compact", "nowrap", "wrap",
     NULL
 };
 
